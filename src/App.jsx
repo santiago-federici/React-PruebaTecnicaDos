@@ -1,10 +1,9 @@
+import { MoviesContainer } from './components/Movies'
 
 import './App.css'
-import { CardsContainer } from './components/cardsContainer'
 
 function App() {
 
-  // const APIKEY = "eafc75c0"
 
   return (
     <main className='app-main'>
@@ -13,7 +12,7 @@ function App() {
         <button>Search</button>
       </form>
 
-      <CardsContainer />
+      <MoviesContainer />
     </main>
   )
 }
