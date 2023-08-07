@@ -1,12 +1,20 @@
-import './App.css'
-
 import { MoviesContainer } from './components/Movies'
 import { useMovies } from './hooks/useMovies'
 import { useSearch } from './hooks/useSearch'
+import { useCallback } from 'react'
+import debounce from 'just-debounce-it'
+
+import './App.css'
 
 function App() {
   const { search, setSearch, error} = useSearch()
   const { movies, getMovies } = useMovies({search})
+
+  const debouncedGetMovies = useCallback(
+    debounce(search => {
+      getMovies({ search })
+    }, 300)
+    , [getMovies])
 
 
   const handleSubmit = (e) => {
@@ -18,8 +26,7 @@ function App() {
     const newSearch = e.target.value
     if(newSearch.startsWith(' ')) return
     setSearch(newSearch)
-
-    
+    debouncedGetMovies(newSearch) 
   }
 
   return (
