@@ -1,6 +1,9 @@
 .app-main{
+    margin: 0;
+    padding: 0;
     display: grid;
     place-content: center;
+    width: 100%;
 }
 
 .serachbox{
@@ -11,10 +14,10 @@
 }
 
 .cards-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
 
