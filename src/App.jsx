@@ -5,12 +5,13 @@ import { useMovies } from './hooks/useMovies'
 import { useSearch } from './hooks/useSearch'
 
 function App() {
-  const { movies } = useMovies()
   const { search, setSearch, error} = useSearch()
+  const { movies, getMovies } = useMovies({search})
 
 
   const handleSubmit = (e) => {
-    e.preventDefault()    
+    e.preventDefault()   
+    getMovies() 
   }
   
   const handleChange = (e) => {

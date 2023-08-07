@@ -37,14 +37,3 @@ export function MoviesContainer({movies}) {
        
     )
 }
-
-
-
-
-// const movieToSerach = 'Avengers'
-// const test = async () => {
-//   const response = await fetch(`http://www.omdbapi.com/?apikey=eafc75c0&s=${movieToSerach}`)
-//   const data = await response.json()
-//   const { imdbID, Poster, Title, Year } = data
-//   return { imdbID, Poster, Title, Year }
-// }
